@@ -1,5 +1,8 @@
 import csv
+import json
+import requests
 
+'''
 db = {"chrome": "http://dl.google.com/chrome/install/375.126/chrome_installer.exe",
       "dropbox": "https://www.dropbox.com/download?plat=win",
       "firefox-32bit": "https://download.mozilla.org/?product=firefox-latest-ssl&os=win&lang=en-US",
@@ -14,8 +17,17 @@ db = {"chrome": "http://dl.google.com/chrome/install/375.126/chrome_installer.ex
       "vlc-64bit": "http://get.videolan.org/vlc/last/win64/vlc-3.0.11-win64.exe",
       "7zip-32bit": "https://www.7-zip.org/a/7z1900.exe",
       "7zip-64bit": "https://www.7-zip.org/a/7z1900-x64.exe"}
+'''
 
+online_db = {}
 local_prefs = []
+
+
+def get_online_db():
+    url = "https://nedkuj.com/api/setupist.json"
+    global online_db
+    online_db = json.loads(requests.get(url).text)
+    return online_db
 
 
 def get_local_prefs(path):

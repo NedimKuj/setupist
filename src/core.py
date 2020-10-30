@@ -8,7 +8,7 @@ from mgrs import dbmgr
 
 def personalized_install(what, where):
     personalization = {}
-    global_db = dbmgr.db
+    global_db = dbmgr.get_online_db()
     for entry in what:
         if entry in global_db.keys():
             personalization.update({entry: global_db[entry]})
@@ -30,7 +30,10 @@ def install(what, directory):
     with alive_bar(total=len(what)) as bar:
         for i in what.keys():
             print(f"Installing {i}...")
-            subprocess.run(directory + i + ".exe /s")
+            if i == "opera":
+                subprocess.run(directory + i + ".exe /silent /allusers=1 /launchopera=0 /setdefaultbrowser=0")
+            else:
+                subprocess.run(directory + i + ".exe /s")
             bar()
 
 

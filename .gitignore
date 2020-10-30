@@ -1,5 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
+# Project - specific
+downloads
+setupist.exe
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,5 +1,5 @@
 """
-VisualManager 2.0
+VisualManager 2.0.1
 updated 07/07/20
 
 """
@@ -15,11 +15,11 @@ def divider(times):
 def splash():
     print()
     divider(2)
-    print(spaces("Setupist DEV"))
+    print(spaces("Setupist v0.0.2"))
+    print(spaces("Release date: 30/10/2020"))
     print(spaces("(C) 2020 Nedim Kujraković"))
-    print(spaces("nedkuj.com | nk@nedkuj.com"))
+    print(spaces("nedkuj.com | contact@nedkuj.com"))
     divider(2)
-    print(f"Application is starting...")
     print()
 
 
